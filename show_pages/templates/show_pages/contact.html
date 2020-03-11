@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+    
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link href="/static/css/style6.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+
+	<!-- //css files -->
+	
+	<!--web font-->
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!--//web font-->
+		<!-- js -->
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/jquery-2.1.4.min.js"></script>
+	<script src="/static/js/bootstrap.js"></script> 
+	<script type="text/javascript" src="/static/js/perfect-scrollbar.min.js"></script>
+	<script type="text/javascript" src="/static/js/main.min.js"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+	
+	<!--web font-->
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!--//web font-->
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="header-top">
+	<header>
+		<div class="top-head ml-lg-auto text-center">
+			<div class="row mr-0">
+				{% if request.session.is_login %}
+					<div class="col-md-3 col-4 sign-btn">
+						<span> 欢迎，{{ request.session.user_name }} </span>
+						<a href="/logout">[登出]</a>
+					</div>
+				{% else %}
+					<div class="col-md-3 col-4 sign-btn">
+						<span style="font-weight: normal;"> 请登录</span>
+					</div>
+				{% endif %}
+				<div class="col-md-3 col-4 sign-btn">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+						<i class="fas fa-lock"></i> 登录</a>
+				</div>
+				<div class="col-md-3 col-4 sign-btn">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter2">
+						<i class="fas fa-user"></i> 注册</a>
+				</div>
+				<div class="search col-md-2 col-4">
+					<div class="mobile-nav-button">
+						<button id="trigger-overlay" type="button">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+					<!-- open/close -->
+					<div class="overlay overlay-door">
+						<button type="button" class="overlay-close">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</button>
+						<form action="#" method="post" class="d-flex">
+							<input class="form-control" type="search" placeholder="Search here..." required>
+							<button type="submit" class="btn btn-primary submit">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+					</div>
+					<!-- open/close -->
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<nav class="navbar navbar-expand-lg navbar-light">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">
+					<i class="fas fa-bars"></i>
+				</span>
+
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-lg-auto text-center">
+					<li class="nav-item">
+						<a class="nav-link" href="/index">主页
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="/crawler_form">数据采集</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/text_titles">文本分析</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/spread_wci">传播力分析</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/user_defined">自定义表单</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="/contact">联系我们</a>
+					</li>
+				</ul>
+
+			</div>
+		</nav>
+	</header>
+</div>
+<!-- //header -->
+
+<!-- inner page banner -->
+<section class="inner-page-banner">
+	<div class="page-heading text-center">
+		<h2>Contact Page</h2>
+		<span class="section_1-breadcrumbs"><a href="/index"><i class="fa fa-home home_1"></i> 主页</a> <span>/ 联系</span></span>
+	</div>
+</section>
+<!-- //inner page banner -->
+
+<!-- contact -->		
+<section class="contact py-5">
+	<div class="container">
+		<div class="heading pb-4">
+			<h3 class="heading mb-2 text-center"> <span>Contact </span> Us </h3>
+
+		</div>
+		<div class="row contact-agileinfo">
+			<div class="col-md-7 contact-right"> 
+				<form action="#" method="post">  
+					<input type="text" name="Name" placeholder="姓名" required="">
+					<input type="email" class="email" name="Email" placeholder="邮箱" required="">
+					<input type="text" name="Phone no" placeholder="电话" required="">
+					<textarea name="Message" placeholder="想说的话......" required=""></textarea>
+					<div class="read mt-3">
+						<a href="#">提交 <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+					</div>	
+				</form>
+			</div>
+			<div class="col-md-5 mt-md-0 mt-5 contact-left">
+				<div class="address">
+					<h5>地址:</h5>
+					<p><span class="fa fa-home"></span>上海市奉贤区海思路999号（华东理工大学奉贤校区）</p>
+				</div>
+				<div class="address address-mdl">
+					<h5>电话:</h5>
+					<p><span class="fa fa-phone"></span> +1(23) 4567 7890</p>
+					<p><span class="fa fa-mobile"></span>+1(23) 4567 7891</p>
+				</div>
+				<div class="address">
+					<h5>邮箱:</h5>
+					<p><span class="fa fa-envelope"></span> <a href="mailto:mail@example.com">mail@example.com</a></p>
+					<p><span class="fa fa-globe"></span> <a href="mailto:website@example.com">website@example.com</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- //contact -->	
+
+<!-- //contact -->
+
+<footer class="footer py-5">
+	<div class="container py-sm-4">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 footer-top">
+				<h3 class="mb-4 pb-3 w3f_title">Follow Us</h3>
+				<p>请持续关注我们，如果对我们的项目有建议，欢迎大家发送邮件。</p>
+				<form action="#" method="post">
+					<input type="email" name="Email" placeholder="Enter your email..." required>
+					<button class="btn1"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+					<div class="clearfix"> </div>
+				</form>
+
+			</div>
+			<div class="col-lg-2  col-md-6 footv3-left mt-md-0 mt-5">
+				<h3 class="mb-4 pb-3 w3f_title">Navigation</h3>
+				<ul class="list-agileits">
+					<li>
+						<a href="/index">
+							主页
+						</a>
+					</li>
+					<li class="my-2">
+						<a href="/crawler_form">
+							数据采集
+						</a>
+					</li>
+					<li class="my-2">
+						<a href="/text_title">
+							文本分析
+						</a>
+					</li>
+					<li class="mb-2">
+						<a href="/spread_wci">
+							传播力分析
+						</a>
+					</li>
+					<li>
+						<a href="/user_defined">
+							自定义表单
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
+				<h3 class="mb-4 pb-3 w3f_title">Contact Us</h3>
+				<div class="fv3-contact">
+					<span class="fas fa-envelope-open mr-2"></span>
+					<p>
+						<a href="mailto:example@email.com">info@example.com</a>
+					</p>
+				</div>
+				<div class="fv3-contact my-3">
+					<span class="fas fa-phone-volume mr-2"></span>
+					<p>+1(23) 4567 7890</p>
+				</div>
+				<div class="fv3-contact">
+					<span class="fas fa-home mr-2"></span>
+					<p>321 Block,4th Building,
+						<br>2nd Street State 3489.</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 footerv2-w3ls mt-lg-0 mt-5">
+				<h3 class="mb-4 w3f_title pb-3">Get In Touch</h3>
+				<p>Excepteur sint occaecat non proident, sunt in culpa qui.</p>
+				<ul class="social-iconsv2 agileinfo mt-4">
+					<li>
+						<a href="#">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-google-plus-g"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //footer bottom -->
+</footer>
+
+<!-- copyright -->
+
+<!-- //copyright -->
+
+ <!--model-forms-->
+    <!--/Login-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Login Now</h5>
+                        <form action="/login" method="post">
+                        	{% csrf_token %}
+                            <div class="form-group">
+                                <label class="mb-2">User name</label>
+                                <input type="email" class="form-control" id="login_name" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="mb-2">Password</label>
+                                <input type="password" class="form-control" id="login_password" placeholder="" required>
+                            </div>
+                            <button id="login_btn" type="button" class="btn btn-primary submit mb-4">Sign In</button>
+                            <span id="login_alert" style="color: red;font-size: 14px;margin-left: 20px;"></span>
+                            <p class="text-center pb-4">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter2" data-dismiss="modal"> Don't have an account?</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//Login-->
+    <!--/Register-->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Register Now</h5>
+                        <form action="/register" method="post">
+                        	{% csrf_token %}
+                            <div class="form-group">
+                                <label>User name</label>
+                                <input type="text" name="user_name" class="form-control" id="validationDefault01" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="mb-2">Password</label>
+                                <input type="password" name="password1" class="form-control" id="password1" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" name="password2" class="form-control" id="password2" placeholder="" required>
+                            </div>
+                            <button type="button" id="register_btn" class="btn btn-primary submit mb-4">Register</button>
+                            <span id="reg_alert" style="color: red;font-size: 14px;margin-left: 20px;"></span>
+                            <p class="text-center pb-4">
+                                <a href="#">By clicking Register, I agree to your terms</a>
+                            </p>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//Register-->
+    <!--//model-form-->
+
+
+	<!-- js -->
+	<script src="/static/js/jquery-2.1.4.min.js"></script>
+	<script src="/static/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+	
+    <script src="/static/js/modernizr-2.6.2.min.js"></script>
+
+	 <!--search jQuery-->
+    <script src="/static/js/classie-search.js"></script>
+    <script src="/static/js/demo1-search.js"></script>
+    <!--//search jQuery-->
+
+    <script>
+        $(document).ready(function() {
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+
+
+	<!-- start-smoth-scrolling -->
+	<script src="/static/js/SmoothScroll.min.js"></script>
+	<script src="/static/js/move-top.js"></script>
+	<script src="/static/js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script>
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	<!--消息提示-->
+<link href="/static/css/animate.css" rel="stylesheet">
+<script src="/static/js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="/static/js/lightyear.js"></script>
+	<!-- login -->
+	<script>
+		$("#login_btn").click(function () {
+        var token = $('input[name=csrfmiddlewaretoken]').val();
+        var user_name = $('#login_name').val();
+        var password = $("#login_password").val();
+        $("#login_alert").empty();
+        $("#login_alert").css({'color': 'red'});
+        if (!user_name) {
+        	$("#login_alert").html("用户名不能为空！");
+        	return false;
+        }
+        if (!password) {
+        	$("#login_alert").html("密码不能为空！");
+        	return false;
+        }
+        $("#login_alert").empty();
+        console.log("submit~")
+        lightyear.loading('show');
+        $.ajax({
+            url: '/login',
+            type: 'post',
+            data: {
+                csrfmiddlewaretoken: token,
+                'user_name': user_name,
+                'password': password,
+            },
+            success: function (data) {
+                console.log(data);
+                var state = data.state;
+                if (!state) {
+                	console.log(0);
+                	$("#login_alert").html("用户名或密码错误！");
+                }else if(state == 1) {
+                	console.log(1);
+                	
+                	$("#login_alert").css({'color': 'green'});
+                	$("#login_alert").html("欢迎，"+user_name+"！");
+                	// lightyear.notify('登录成功，页面即将自动刷新~', 'success', 5000, 'mdi mdi-emoticon-happy', 'top', 'center');
+                	lightyear.loading('hide');
+                	lightyear.notify('登录成功，页面即将自动跳转~', 'success', 800);
+                	setTimeout(function(){
+                		window.location.reload();
+                	}, 2500)
+                	
+                }
+            },
+        })
+  })
+	</script>
+	<!-- register -->
+	<script>
+		$("#register_btn").click(function () {
+        var token = $('input[name=csrfmiddlewaretoken]').val();
+        var user_name = $('#validationDefault01').val();
+        var p1 = $("#password1").val();
+        var p2 = $("#password2").val();
+        $("#reg_alert").empty();
+        $("#reg_alert").css({'color': 'red'});
+        if (!user_name) {
+        	$("#reg_alert").html("用户名不能为空！");
+        	return false;
+        }
+        if (!p1 && !p2) {
+        	$("#reg_alert").html("密码不能为空！");
+        	return false;
+        }
+        if (p1 != p2 || !p1 && !p2) {
+        	$("#reg_alert").html("两次输入的密码不相同！");
+        	return false;
+        }
+        $("#reg_alert").empty();
+        console.log("submit~")
+        $.ajax({
+            url: '/register',
+            type: 'post',
+            data: {
+                csrfmiddlewaretoken: token,
+                'user_name': user_name,
+                'password': p2,
+            },
+            success: function (data) {
+                console.log(data);
+                var state = data.state;
+                if (!state) {
+                	console.log(0);
+                	$("#reg_alert").html("用户名已存在！");
+                }else if(state == 1) {
+                	console.log(1);
+                	$("#reg_alert").css({'color': 'green'});
+                	$("#reg_alert").html("注册成功！");
+                	lightyear.notify('注册成功，页面即将自动跳转~', 'success', 800);
+                	setTimeout(function(){
+                		window.location.reload();
+                	}, 2500)
+                }
+            },
+        })
+  })
+	</script>
+
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+</body>
+</html>
